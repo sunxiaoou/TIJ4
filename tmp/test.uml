@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="38.5" y="210.0">net.mindview.util.FourTuple</node>
+    <node x="90.0" y="315.0">net.mindview.util.FiveTuple</node>
+    <node x="58.863636363636374" y="0.0">net.mindview.util.TwoTuple</node>
+    <node x="102.0" y="420.0">net.mindview.util.Tuple</node>
+    <node x="123.61363636363637" y="105.0">net.mindview.util.ThreeTuple</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="net.mindview.util.Tuple" target="net.mindview.util.ThreeTuple">
+      <point x="26.25" y="-15.5" />
+      <point x="163.25" y="400.0" />
+      <point x="309.5" y="400.0" />
+      <point x="309.5" y="185.0" />
+      <point x="263.1136363636364" y="185.0" />
+      <point x="46.5" y="27.5" />
+    </edge>
+    <edge source="net.mindview.util.Tuple" target="net.mindview.util.FourTuple">
+      <point x="-8.75" y="-15.5" />
+      <point x="128.25" y="390.0" />
+      <point x="79.5" y="390.0" />
+      <point x="79.5" y="290.0" />
+      <point x="87.75" y="290.0" />
+      <point x="-49.25" y="27.5" />
+    </edge>
+    <edge source="net.mindview.util.FiveTuple" target="net.mindview.util.FourTuple">
+      <point x="0.0" y="-27.5" />
+      <point x="194.5" y="290.0" />
+      <point x="186.25" y="290.0" />
+      <point x="49.25" y="27.5" />
+    </edge>
+    <edge source="net.mindview.util.Tuple" target="net.mindview.util.FiveTuple">
+      <point x="8.75" y="-15.5" />
+      <point x="145.75" y="390.0" />
+      <point x="194.5" y="390.0" />
+      <point x="0.0" y="27.5" />
+    </edge>
+    <edge source="net.mindview.util.ThreeTuple" target="net.mindview.util.TwoTuple">
+      <point x="0.0" y="-27.5" />
+      <point x="216.61363636363637" y="80.0" />
+      <point x="178.86363636363637" y="80.0" />
+      <point x="40.0" y="27.5" />
+    </edge>
+    <edge source="net.mindview.util.FourTuple" target="net.mindview.util.ThreeTuple">
+      <point x="0.0" y="-27.5" />
+      <point x="137.0" y="185.0" />
+      <point x="170.11363636363637" y="185.0" />
+      <point x="-46.5" y="27.5" />
+    </edge>
+    <edge source="net.mindview.util.Tuple" target="net.mindview.util.TwoTuple">
+      <point x="-26.25" y="-15.5" />
+      <point x="110.75" y="400.0" />
+      <point x="28.0" y="400.0" />
+      <point x="28.0" y="80.0" />
+      <point x="98.86363636363637" y="80.0" />
+      <point x="-40.0" y="27.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="169.0" y="225.5" />
+  <SelectedNodes>
+    <node>net.mindview.util.ThreeTuple</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
