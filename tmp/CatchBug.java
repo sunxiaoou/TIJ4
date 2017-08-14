@@ -8,6 +8,8 @@ import java.util.Random;
 
 
 public class CatchBug {
+  private static int counter = 0;
+  private final int id =  ++ counter;
   private static Random rand = new Random(47);
   private static Monkey monkeys[];
   private static Monkey work[];
@@ -121,10 +123,10 @@ public class CatchBug {
   }
 
   private static void count() {
-    System.out.println(track("Good", Roll.quantity(Roll.GOOD)));
-    System.out.println(track("Medium", Roll.quantity(Roll.MEDIUM)));
-    System.out.println(track("Bad", Roll.quantity(Roll.BAD)));
-    System.out.println(track("AbnormalDead", Monkey.deadQuantity()));
+    System.out.println(track("  Good", Roll.quantity(Roll.GOOD)));
+    System.out.println(track("  Medium", Roll.quantity(Roll.MEDIUM)));
+    System.out.println(track("  Bad", Roll.quantity(Roll.BAD)));
+    System.out.println(track("  AbnormalDead", Monkey.deadQuantity()));
   }
 
   private static void shuttle() {
@@ -152,7 +154,7 @@ public class CatchBug {
       monkeys[i] = new Monkey(Roll.BAD);
 
     // System.out.printf("\n\nGood(%d)Medium(%d)Bad(%d)\n", nGood, nMedium, nBad);
-    System.out.printf("\n\nTest begins ...\n");
+    System.out.printf("\nTest%02d begins ...\n", id);
     count();
     for (i = 0; i < nRound; i ++) {
       System.arraycopy(monkeys, 0, work, 0, monkeys.length);
@@ -184,7 +186,7 @@ public class CatchBug {
       if (Roll.isExtinct())
         break;
     }
-    System.out.printf("\nTest ends at Round %03d:\n", i);
+    System.out.printf("Test%02d ends at Round %03d:\n", id, i);
     count();
     // System.out.println("Input any key to continue ...");
     // System.in.read();
