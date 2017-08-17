@@ -18,7 +18,7 @@ public class CatchBug {
   private static String numberField() {
     return "%" + fieldWidth + "d";
   }
-  private static int sizeWidth = 6;
+  private static int sizeWidth = 7;
   private static String sizeField = "%" + sizeWidth + "s";
   private String headline = "";
 
@@ -111,7 +111,7 @@ public class CatchBug {
 
   private void displayHeader() {
     // Calculate width and pad with '-':
-    int width = fieldWidth * (Roll.values().length + 1) + sizeWidth;
+    int width = fieldWidth * (Roll.values().length + 2) + sizeWidth;
     int dashLength = width - headline.length() - 1;
     StringBuilder head = new StringBuilder(width);
     for(int i = 0; i < dashLength / 2; i++)
@@ -127,6 +127,7 @@ public class CatchBug {
     for(Roll roll : Roll.values())
       System.out.format(stringField(), roll);
     System.out.format(stringField(), "Killed");
+    System.out.format(stringField(), "K/R");
 
     System.out.println();
   }
@@ -135,7 +136,8 @@ public class CatchBug {
     System.out.format(sizeField, round);
     for(Roll roll : Roll.values())
       System.out.format(numberField(), Roll.quantity(roll));
-    System.out.format(numberField(), Monkey.deadQuantity());
+      System.out.format(numberField(), Monkey.deadQuantity());
+      System.out.format(numberField(), round == 0 ? 0 : Monkey.deadQuantity() / round);
 
     System.out.println();
   }
@@ -167,7 +169,8 @@ public class CatchBug {
 
     displayHeader();
     print(0);
-    for (i = 0; i < nRound; i ++) {
+    // for (i = 0; i < nRound; i ++) {
+    for (i = 0; ; i ++) {
       System.arraycopy(monkeys, 0, work, 0, monkeys.length);
       shuttle();
 
