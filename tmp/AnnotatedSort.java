@@ -2,6 +2,8 @@ package tmp;
 
 import java.lang.annotation.*;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -29,13 +31,25 @@ public class AnnotatedSort {
         return clz.isAnnotationPresent(Priority.class) ? clz.getAnnotation(Priority.class).value() : Integer.MAX_VALUE;
     }
 
-    static private List<Class> sort(List<Class> classes) {
+    static private List<Class> sort8(List<Class> classes) {
         return classes.stream().sorted(comparing(AnnotatedSort::priority)).collect(Collectors.toList());
+    }
+
+    static private List<Class> sort7(List<Class> classes) {
+        Collections.sort(classes, new Comparator<Class>() {
+            public int compare(Class c1, Class c2){
+                return Integer.compare(priority(c1), priority(c2));
+            }
+        });
+        return classes;
     }
 
     public static void main(String[] args) throws Exception {
         List<Class> classes = Arrays.asList(C.class, B.class, A.class);
-        for (Class<?> clz : sort(classes)) {
+        for (Class<?> clz : sort7(classes)) {
+            System.out.println(clz);
+        }
+        for (Class<?> clz : sort8(classes)) {
             System.out.println(clz);
         }
     }
